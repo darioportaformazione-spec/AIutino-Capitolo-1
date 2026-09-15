@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIutino — Capitolo 1</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#f4f1eb;color:#202020;font-family:Arial,Helvetica,sans-serif}
+main{max-width:760px;margin:0 auto;padding:34px 18px 60px}
+.card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+h1{margin:0 0 8px;font-size:32px} .lead{color:#555;margin:0 0 28px}
+label{display:block;font-weight:700;margin:20px 0 8px}
+input{width:100%;padding:14px;border:1px solid #bbb;border-radius:9px;font-size:16px}
+button{width:100%;margin-top:22px;padding:15px;border:0;border-radius:9px;background:#222;color:#fff;font-weight:700;font-size:16px;cursor:pointer}
+button:active{transform:translateY(1px)} #status{min-height:22px;margin-top:12px;font-size:14px;color:#555}
+details{margin-top:25px} summary{cursor:pointer;font-weight:700}
+pre{white-space:pre-wrap;background:#f7f7f7;padding:18px;border-radius:10px;line-height:1.45;font-family:Arial,sans-serif}
+.footer{margin-top:22px;font-size:13px;color:#777}
+</style>
+</head>
+<body>
+<main><section class="card">
+<h1>AIutino — Capitolo 1</h1>
+<p class="lead">Preparati alla conversazione. Inserisci il potenziale cliente e ciò che vendi, poi copia il prompt già compilato e incollalo in ChatGPT.</p>
+
+<label for="cliente">POTENZIALE CLIENTE</label>
+<input id="cliente" placeholder="Ragione sociale, categoria e località">
+
+<label for="vende">COSA VENDE IL VENDITORE</label>
+<input id="vende" placeholder="Prodotti, servizi o soluzioni che proponi">
+
+<button id="copy">COPIA IL PROMPT COMPLETO</button>
+<div id="status"></div>
+
+<details>
+<summary>Visualizza il prompt</summary>
+<pre id="out"></pre>
+</details>
+<p class="footer">L'AIutino è applicabile a qualsiasi settore della vendita.</p>
+</section></main>
+<script>
+const base = 'POTENZIALE CLIENTE: [inserisci RAGIONE SOCIALE, CATEGORIA e LOCALITÀ]\n\nCOSA VENDE IL VENDITORE: [inserisci i prodotti, servizi o soluzioni che il venditore propone]\n\nAnalizza le informazioni web disponibili, da tutte le fonti che riesci, sull\'attività e prepara il venditore seguendo i tre passaggi del Capitolo 1.\n\n1.1 — IL PRIMO CONTATTO\n\nTrova elementi specifici, autentici e verificabili che possano diventare un apprezzamento spontaneo e sincero da rivolgere al titolare. Privilegia la storia dell\'azienda, la sezione «Chi siamo», le origini, le persone, i passaggi generazionali, le scelte particolari e gli elementi che rendono questa attività diversa dalle altre. Non inventare nulla, non trasformare un\'ipotesi in un fatto e non presentare come certe informazioni che non lo sono. Per ogni elemento indica la fonte. Scegli il migliore elemento da utilizzare nel primo contatto e trasformalo in una breve frase naturale, facile da dire a voce. Importante: Specifica all\'interno della frase dove hai preso questa informazione che diventa un apprezzamento (es. citando la sezione esatta del sito web, il post social specifico o la biografia della pagina ufficiale).\n\n1.2 — IL SERPENTE SSSOLUZIONATORE E IL DEMONE VALUTATORE\n\nPartendo dall\'elemento individuato nel punto 1.1, considera l\'attività come un figlio: non cercare subito un problema o una soluzione, ma qualcosa che valga la pena conoscere meglio. Proponi ESATTAMENTE DUE domande aperte:\n\nCOSA: deve iniziare con «Cosa...»\n\nCOME: deve iniziare con «Come...»\n\nDevono essere brevi, naturali, non commerciali e permettere al cliente di raccontare. Prima di formularle chiediti: «Se il cliente parlasse per cinque minuti, avrei davvero qualcosa da ascoltare?» L\'obiettivo è conoscere il «figlio», non vendergli il «corso di judo».\n\n1.3 — METODO "WINNIE THE POOH"\n\nImmagina ora di aver ascoltato il cliente e di aver raccolto le informazioni emerse durante la conversazione. Partendo esclusivamente da ciò che il cliente ha raccontato durante la conversazione e da eventuali casi o referenze reali pertinenti, costruisci una conclusione telefonica di massimo 45 secondi, naturale, concreta e facile da pronunciare. Utilizza questa logica:\n\nM — MOTIVAZIONE: valorizza ciò che il cliente ha raccontato e ciò che già funziona.\n\nI — INFORMAZIONE: anticipa brevemente cosa verrà mostrato, lasciando qualcosa da scoprire.\n\nC — CRITERIO: fai percepire che ciò che già funziona non deve necessariamente essere cambiato.\n\nR — REFERENZE: utilizza eventuali casi reali pertinenti. Non inventare clienti o risultati.\n\nO — OBIETTIVO: porta naturalmente verso l\'appuntamento, facendolo percepire come un\'occasione per vedere concretamente e farsi un\'idea, non come una decisione d\'acquisto.\n\nLa conclusione deve essere la naturale continuazione di ciò che il cliente ha raccontato. Non fare un elenco delle informazioni ricevute.\n\nREGOLA FONDAMENTALE — NON ANTICIPARE LA SOLUZIONE\n\nNella conclusione non introdurre, nemmeno indirettamente, l\'idea che il cliente abbia bisogno di migliorare, cambiare, integrare, affiancare o correggere ciò che sta già facendo.\n\nNon dire frasi come:\n- «vediamo se c\'è qualcosa da aggiungere»\n- «qualcosa che può affiancarsi a quello che fate»\n- «vediamo cosa possiamo migliorare»\n- «vediamo come possiamo aiutarvi»\n- «potrebbe esservi utile»\n- «potremmo trovare una soluzione»\n- «potremmo integrare quello che già fate»\n\ne non utilizzare equivalenti che facciano percepire al cliente che il venditore abbia già individuato un bisogno o una soluzione.\n\nIl venditore NON deve far percepire che sta arrivando con una soluzione a un problema. Deve far percepire che sta proponendo un\'occasione per conoscersi, vedere concretamente di cosa ci si occupa e farsi un\'idea.\n\nIl criterio «ciò che già funziona non deve necessariamente essere cambiato» deve essere applicato nel tono e nell\'atteggiamento, NON trasformato in una frase commerciale da pronunciare.\n\nNella telefonata non vendere la soluzione: porta il cliente ad accettare l\'appuntamento come occasione per conoscere qualcosa e farsi un\'idea.\n\nDopo aver valorizzato ciò che il cliente ha raccontato, utilizza una formula come:\n\n«Visto che mi ha raccontato che [informazione specifica emersa dalla conversazione]...»\n\ne poi:\n\n«facciamo così, vengo a trovarla e [informazione relativa a ciò che verrà mostrato o fatto in base a quanto emerso dalla conversazione]...»\n\noppure:\n\n«facciamo così, vengo a presentarmi e [informazione relativa a ciò che verrà mostrato o fatto in base a quanto emerso dalla conversazione]...»\n\nin modo assertivo e deciso nel prendere appuntamento.\n\nIl seguito deve rimanere neutro e concreto: conoscersi, presentarsi, mostrare brevemente di cosa ci si occupa e lasciare al cliente la possibilità di farsi un\'idea.\n\nNon inventare problemi, bisogni, opportunità, clienti o risultati.\n\nInserisci obbligatoriamente questa frase:\n\n«Non richiede nessuna decisione immediata, almeno si fa un’idea di come funziona e di cosa fanno anche altri.»\n\nTermina sempre con:\n\n«Preferisce la mattina o il pomeriggio?»\n\nREGOLE GENERALI\n\nNon spiegare il metodo. Non aggiungere informazioni non verificabili. Non trasformare ipotesi in fatti. Non creare problemi che il cliente non ha espresso. Non anticipare bisogni o soluzioni che il cliente non ha dichiarato. Non trasformare il fatto che qualcosa possa essere migliorato in un presupposto della conversazione. Non utilizzare la conclusione per spiegare al cliente perché dovrebbe avere bisogno di ciò che vendiamo.\n\nLa conclusione deve partire da ciò che il cliente ha raccontato e accompagnarlo all\'appuntamento senza pressione.\n\nRestituisci il risultato suddiviso esattamente nei tre paragrafi 1.1, 1.2 e 1.3, in modo che il venditore possa utilizzarlo come preparazione alla conversazione e non come copione da leggere.';
+const c = document.getElementById('cliente'), v = document.getElementById('vende'), out = document.getElementById('out'), status = document.getElementById('status');
+function getPrompt() {
+  return base.replace('[inserisci RAGIONE SOCIALE, CATEGORIA e LOCALITÀ]', c.value || '[inserisci RAGIONE SOCIALE, CATEGORIA e LOCALITÀ]')
+             .replace('[inserisci i prodotti, servizi o soluzioni che il venditore propone]', v.value || '[inserisci i prodotti, servizi o soluzioni che il venditore propone]');
+}
+function refresh(){out.textContent=getPrompt()}
+c.oninput=v.oninput=refresh;
+document.getElementById('copy').onclick=async()=>{
+  try { await navigator.clipboard.writeText(getPrompt()); status.textContent='Prompt copiato. Ora apri ChatGPT e incollalo.'; }
+  catch(e) { status.textContent='Se la copia automatica non funziona, apri "Visualizza il prompt" e copialo manualmente.'; }
+};
+refresh();
+</script>
+</body>
+</html>
