@@ -1,3 +1,116 @@
+oggi 11:01
+e' possibile mogliorare la grafica mettendo in alto il richiamo al libro
+Modifica
+Modifica
+rifai, usa questa intgrandola come vuoi... rifai
+Modifica
+
+EVERAP S.P.A.
+
+Dal 1986 Troviamo Agenti di Commercio
+
+40 anni di ricerca agenti per aziende. Non è un portale di annunci. Agenti del tuo settore.
+
+Annuncio
+Altre opzioni
+ho messo nuovo html ma lo vedo ancora cosi 
+va bene pero' l'unico problema è che in versione smartphone bisogna che la sezione AIutino - Capitolo 1 si veda subito quindi bisogna restringere in verticale la parte iniziale, magari scrivendo piu in piccolo... Tecniche di comunicazione e relazionali per affascinare i clienti nell'era digitale e dell'AI... rifai e se ti dico ok fai html nuovo
+Modifica
+
+Sì, questa è la modifica che farei: ridurre soprattutto l’altezza dell’header nella versione smartphone, mantenendo comunque riconoscibili copertina, titolo e richiamo al libro.
+
+In particolare:
+
+titolo leggermente più compatto;
+sottotitolo molto più piccolo e su una sola/due righe compatte;
+copertina più piccola;
+meno spazio verticale tra gli elementi;
+“AIutino — Capitolo 1” deve comparire quasi immediatamente, senza dover scorrere;
+su desktop invece manteniamo l’header più ricco e scenografico.
+
+Questa è la direzione che userei per l'HTML definitivo. Se mi dici OK, ti preparo il nuovo index.html pronto da caricare su GitHub Pages.
+
+Modifica
+
+Sì, così secondo me è molto più chiaro: sotto “COPIA IL PROMPT COMPLETO” metterei proprio una fascia “COSA FARE DOPO” con i 3 passaggi:
+
+1. Copia il prompt → 2. Apri ChatGPT o la tua AI → 3. Incolla il prompt e invialo.
+
+E soprattutto renderei “ChatGPT o la tua AI” molto evidente, perché è esattamente il passaggio che il lettore deve capire.
+
+Viaggio Digitale srl
+
+Pubblicità su ChatGPT?
+
+Setup, gestione, tracciamento e ottimizzazione delle campagne su ChatGPT.
+
+Annuncio
+Altre opzioni
+ma guarda che schifo in versione desktop
+
+😂 Sì, ma aspetta a rifare l’HTML: qui vedo subito il problema.
+
+La pagina sta occupando circa 430 px invece dei 1080 px previsti. È praticamente esattamente il 40% della larghezza prevista.
+
+Quindi molto probabilmente Chrome ha lo zoom della pagina impostato al 40% per questo sito.
+
+Fai solo questa prova
+
+Con la pagina aperta, premi:
+
+CTRL + 0
+
+Questo riporta lo zoom di Chrome al 100%.
+
+Se invece vuoi controllare manualmente:
+
+⋮ in alto a destra → Zoom → 100%
+
+Perché sono quasi certo che sia questo
+
+Nel tuo screenshot:
+
+finestra Chrome: circa 1535 px
+pagina: circa 430 px
+430 / 1080 ≈ 40%
+
+E il mio HTML ha proprio un limite desktop di circa 1080 px.
+
+Quindi non toccherei ancora il codice. Prima fai CTRL + 0.
+
+Se dopo CTRL + 0 la pagina torna larga e occupa bene il desktop, abbiamo risolto senza modificare nulla.
+
+Se invece rimane stretta anche al 100%, allora sì: intervengo sull'HTML e ti faccio una versione desktop molto più bella, mantenendo però quella compatta che abbiamo appena ottenuto su smartphone.
+
+Envision SRL
+
+Vendi online con metodo
+
+Strategia, sviluppo e dati per il tuo business
+
+Annuncio
+Altre opzioni
+ora bene... però rifai perchè come vedi qui, rosso su rosso sparisce la scritta
+
+Esatto. Ho corretto proprio quel punto: il sottotitolo non passa più sopra l’elemento rosso, quindi rimane sempre leggibile sia su desktop sia su smartphone.
+
+Ho lasciato invariata la struttura che avevamo approvato, compresa “COSA FARE DOPO”.
+
+Scarica il nuovo index.html 
+
+index.html
+HTML
+rifalla, non mi piace... pensare resta tagliato e quel bannerino dove c'è la scritta Tecniche di... non mi piace
+
+Hai ragione. Ho rifatto l’header da zero seguendo due criteri:
+
+“PENSARE” non viene più tagliato: ora il titolo ha una composizione controllata anche su smartphone.
+Ho eliminato completamente il bannerino dietro “Tecniche di comunicazione…”: il sottotitolo è ora pulito, direttamente sul fondo chiaro.
+Ho mantenuto la copertina vera del libro.
+Ho lasciato invariata la parte AIutino + campi + Copia + Cosa fare dopo.
+
+Scarica il nuovo index.html 
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -9,19 +122,21 @@
 body{margin:0;background:#eeeae3;color:#171717;font-family:Arial,Helvetica,sans-serif}
 .page{width:min(1080px,calc(100% - 28px));margin:16px auto;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.10)}
 
-.hero{position:relative;display:grid;grid-template-columns:1.5fr .75fr;min-height:330px;overflow:hidden;background:linear-gradient(120deg,#fffdf9 0%,#f6eee2 100%)}
-.hero:after{content:"";position:absolute;left:-100px;bottom:-145px;width:520px;height:250px;background:#d91f16;border-radius:50%;opacity:.95}
-.hero-copy{position:relative;z-index:2;padding:30px 20px 25px 52px}
-.author{color:#d91f16;font-weight:800;letter-spacing:7px;font-size:21px;margin-bottom:10px}
-.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:5px 0;font-weight:800;font-size:15px;margin-bottom:17px}
-.hero h1{margin:0;font-size:clamp(43px,6vw,76px);line-height:.89;letter-spacing:-3px}
+/* HEADER: pulito, senza banner dietro al sottotitolo */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 280px;min-height:320px;overflow:hidden;background:#f8f1e6}
+.hero-copy{position:relative;z-index:2;padding:30px 12px 25px 52px}
+.author{color:#d91f16;font-weight:800;letter-spacing:7px;font-size:21px;margin-bottom:9px}
+.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:4px 0;font-weight:800;font-size:14px;margin-bottom:16px}
+.hero h1{margin:0;color:#090909;font-size:clamp(44px,5.7vw,70px);line-height:.91;letter-spacing:-2.5px;max-width:700px}
 .hero h1 span{color:#d91f16}
-.brush{height:7px;width:65%;background:#d91f16;border-radius:50%;margin:20px 0 17px}
-.subtitle{font:18px/1.3 Georgia,serif;max-width:590px}
+.redline{width:220px;height:6px;background:#d91f16;border-radius:50%;margin:17px 0 13px;transform:rotate(-1deg)}
+.subtitle{font:18px/1.25 Georgia,serif;max-width:620px;color:#202020}
 .subtitle b{color:#d91f16}
-.cover-wrap{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;padding:16px 30px 18px 0}
-.cover{width:min(245px,90%);max-height:300px;object-fit:contain;transform:rotate(2deg);filter:drop-shadow(0 16px 16px rgba(0,0,0,.22))}
+.cover-wrap{display:flex;align-items:center;justify-content:center;padding:20px 30px 20px 0;position:relative;z-index:3}
+.cover{width:235px;max-height:292px;object-fit:contain;transform:rotate(2deg);filter:drop-shadow(0 15px 15px rgba(0,0,0,.22))}
+.hero::after{content:"";position:absolute;left:-150px;bottom:-190px;width:520px;height:250px;background:#d91f16;border-radius:50%;opacity:.96}
 
+/* CONTENUTO */
 .content{padding:28px 38px 28px}
 .heading{display:flex;gap:15px;align-items:center;margin-bottom:20px}
 .book-icon{width:62px;height:62px;flex:0 0 62px;border-radius:17px;background:#fde9e7;color:#d91f16;display:grid;place-items:center;font-size:31px}
@@ -39,17 +154,13 @@ input{width:100%;padding:15px 17px;border:1px solid #cfd4da;border-radius:11px;b
 input:focus{border:2px solid #d91f16}
 button{width:100%;border:0;border-radius:13px;background:#d91f16;color:#fff;padding:18px;font-size:20px;font-weight:800;cursor:pointer;margin-top:6px;box-shadow:0 7px 15px rgba(217,31,22,.16)}
 button:hover{filter:brightness(.96)}
-
 .after{margin-top:15px;background:#fff3f1;border-radius:17px;padding:19px 21px;border:1px solid #f6d5d1}
-.after-title{font-size:21px;font-weight:900;color:#d91f16;margin-bottom:14px}
+.after-title{font-size:21px;font-weight:900;color:#b71912;margin-bottom:14px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .step{display:flex;gap:10px;align-items:flex-start}
 .num{width:35px;height:35px;flex:0 0 35px;border-radius:50%;background:#d91f16;color:#fff;display:grid;place-items:center;font-weight:900}
 .step strong{display:block;font-size:15px;line-height:1.15}
 .step span{display:block;color:#69727d;font-size:13px;line-height:1.25;margin-top:4px}
-.arrow{color:#d91f16;font-size:22px;align-self:center}
-.stepwrap{display:contents}
-
 details{margin-top:15px;background:#f5f6f7;border-radius:13px;overflow:hidden}
 summary{cursor:pointer;list-style:none;padding:17px 20px;font-size:18px;font-weight:800}
 summary::-webkit-details-marker{display:none}
@@ -58,52 +169,51 @@ summary::-webkit-details-marker{display:none}
 
 @media(max-width:760px){
   .page{width:calc(100% - 10px);margin:5px auto;border-radius:17px}
-  .hero{grid-template-columns:1.45fr .7fr;min-height:215px}
-  .hero-copy{padding:17px 5px 15px 28px}
-  .author{font-size:12px;letter-spacing:4px;margin-bottom:6px}
-  .edition{font-size:9px;padding:3px 0;margin-bottom:8px}
-  .hero h1{font-size:clamp(29px,9vw,48px);letter-spacing:-1.5px;line-height:.88}
-  .brush{height:4px;width:70%;margin:11px 0 9px}
-  .subtitle{font-size:10px;line-height:1.18;max-width:320px}
-  .cover-wrap{padding:8px 15px 8px 0}
-  .cover{width:150px;max-height:185px}
-  .content{padding:20px 15px 19px}
-  .heading{gap:10px;margin-bottom:15px;align-items:flex-start}
-  .book-icon{width:44px;height:44px;flex-basis:44px;border-radius:12px;font-size:23px}
-  h2{font-size:25px;line-height:1.05}
-  .intro{font-size:12px;line-height:1.28;margin-top:4px}
-  .card{padding:14px 13px;margin:10px 0;border-radius:13px}
-  .row{gap:9px;margin-bottom:8px}
-  .small-icon{width:35px;height:35px;flex-basis:35px;border-radius:9px;font-size:17px}
-  label{font-size:13px}
-  .help{font-size:9.5px;line-height:1.15}
-  input{padding:11px 12px;font-size:12px;border-radius:8px}
-  button{padding:14px 10px;font-size:15px;border-radius:10px;margin-top:4px}
-  .after{padding:13px 12px;margin-top:11px;border-radius:13px}
-  .after-title{font-size:15px;margin-bottom:10px}
+  .hero{grid-template-columns:minmax(0,1fr) 112px;min-height:185px}
+  .hero-copy{padding:15px 3px 13px 22px}
+  .author{font-size:11px;letter-spacing:3.5px;margin-bottom:5px}
+  .edition{font-size:8px;padding:3px 0;margin-bottom:7px}
+  .hero h1{font-size:clamp(27px,8.5vw,39px);line-height:.9;letter-spacing:-1.3px;max-width:100%;word-break:normal}
+  .redline{width:105px;height:3px;margin:9px 0 7px}
+  .subtitle{font-size:9.5px;line-height:1.18;max-width:100%}
+  .cover-wrap{padding:8px 9px 8px 0}
+  .cover{width:104px;max-height:150px}
+  .hero::after{left:-90px;bottom:-155px;width:330px;height:170px}
+  .content{padding:18px 14px 18px}
+  .heading{gap:9px;margin-bottom:14px;align-items:flex-start}
+  .book-icon{width:43px;height:43px;flex-basis:43px;border-radius:12px;font-size:22px}
+  h2{font-size:24px;line-height:1.05}
+  .intro{font-size:11.5px;line-height:1.25;margin-top:4px}
+  .card{padding:13px 12px;margin:9px 0;border-radius:12px}
+  .row{gap:8px;margin-bottom:7px}
+  .small-icon{width:34px;height:34px;flex-basis:34px;border-radius:9px;font-size:16px}
+  label{font-size:12.5px}
+  .help{font-size:9px;line-height:1.12}
+  input{padding:10px 11px;font-size:11.5px;border-radius:8px}
+  button{padding:13px 9px;font-size:14px;border-radius:9px;margin-top:3px}
+  .after{padding:12px 11px;margin-top:10px;border-radius:12px}
+  .after-title{font-size:14px;margin-bottom:9px}
   .steps{display:block}
-  .step{margin-bottom:9px;gap:8px}
+  .step{margin-bottom:8px;gap:7px}
   .step:last-child{margin-bottom:0}
-  .num{width:27px;height:27px;flex-basis:27px;font-size:12px}
-  .step strong{font-size:12px}
-  .step span{font-size:10px;margin-top:2px}
-  .arrow{display:none}
-  details{margin-top:11px}
-  summary{padding:13px 14px;font-size:14px}
-  .prompt{font-size:11px;padding:12px;margin:0 9px 9px}
-  .note{font-size:10px;margin-top:11px}
+  .num{width:26px;height:26px;flex-basis:26px;font-size:11px}
+  .step strong{font-size:11.5px}
+  .step span{font-size:9.5px;margin-top:2px}
+  details{margin-top:10px}
+  summary{padding:12px 13px;font-size:13.5px}
+  .prompt{font-size:10.5px;padding:11px;margin:0 8px 8px}
+  .note{font-size:9.5px;margin-top:10px}
 }
 </style>
 </head>
 <body>
 <div class="page">
-
 <section class="hero">
   <div class="hero-copy">
     <div class="author">DARIO PORTA</div>
     <div class="edition">SECONDA EDIZIONE</div>
-    <h1>TI AMO...<br><span>MA CI DEVO PENSARE</span></h1>
-    <div class="brush"></div>
+    <h1>TI AMO...<br><span>MA CI DEVO<br>PENSARE</span></h1>
+    <div class="redline"></div>
     <div class="subtitle">Tecniche di comunicazione e relazionali per affascinare i clienti nell’era <b>digitale</b> e dell’<b>AI</b>.</div>
   </div>
   <div class="cover-wrap">
@@ -121,18 +231,12 @@ summary::-webkit-details-marker{display:none}
   </div>
 
   <div class="card blue">
-    <div class="row">
-      <div class="small-icon">▦</div>
-      <div><label for="cliente">POTENZIALE CLIENTE</label><span class="help">Inserisci ragione sociale, categoria e località.</span></div>
-    </div>
+    <div class="row"><div class="small-icon">▦</div><div><label for="cliente">POTENZIALE CLIENTE</label><span class="help">Inserisci ragione sociale, categoria e località.</span></div></div>
     <input id="cliente" type="text" placeholder="Ragione sociale, categoria e località">
   </div>
 
   <div class="card green">
-    <div class="row">
-      <div class="small-icon">◆</div>
-      <div><label for="vende">COSA VENDE IL VENDITORE</label><span class="help">Inserisci prodotti, servizi o soluzioni che proponi.</span></div>
-    </div>
+    <div class="row"><div class="small-icon">◆</div><div><label for="vende">COSA VENDE IL VENDITORE</label><span class="help">Inserisci prodotti, servizi o soluzioni che proponi.</span></div></div>
     <input id="vende" type="text" placeholder="Prodotti, servizi o soluzioni che proponi">
   </div>
 
@@ -141,59 +245,34 @@ summary::-webkit-details-marker{display:none}
   <section class="after">
     <div class="after-title">COSA FARE DOPO</div>
     <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <div><strong>Copia il prompt</strong><span>Clicca sul pulsante qui sopra.</span></div>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <div><strong>Apri ChatGPT o la tua AI</strong><span>Vai su ChatGPT oppure sull’assistente AI che usi.</span></div>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <div><strong>Incolla e invia</strong><span>Nella chat premi Ctrl+V e poi invia il prompt.</span></div>
-      </div>
+      <div class="step"><div class="num">1</div><div><strong>Copia il prompt</strong><span>Clicca sul pulsante qui sopra.</span></div></div>
+      <div class="step"><div class="num">2</div><div><strong>Apri ChatGPT o la tua AI</strong><span>Vai su ChatGPT oppure sull’assistente AI che usi.</span></div></div>
+      <div class="step"><div class="num">3</div><div><strong>Incolla e invia</strong><span>Nella chat premi Ctrl+V e poi invia il prompt.</span></div></div>
     </div>
   </section>
 
-  <details>
-    <summary>▶ &nbsp; Visualizza il prompt</summary>
-    <div class="prompt" id="preview"></div>
-  </details>
-
+  <details><summary>▶ &nbsp; Visualizza il prompt</summary><div class="prompt" id="preview"></div></details>
   <div class="note">ⓘ &nbsp; L’AIutino è applicabile a qualsiasi settore della vendita.</div>
 </main>
 </div>
 
 <script>
 const template = "Agisci come un formatore commerciale esperto.\n\nTi fornirò:\nPOTENZIALE CLIENTE: [POTENZIALE_CLIENTE]\nCOSA VENDE IL VENDITORE: [COSA_VENDE]\n\nAiuta il venditore a preparare il primo contatto con questo potenziale cliente.\n\n1. Analizza ragione sociale, categoria e località.\n2. Costruisci un'apertura naturale, concreta e personalizzata, evitando frasi generiche da venditore.\n3. Crea TRE possibili apprezzamenti specifici, credibili e pertinenti.\n4. Collega l'approccio a ciò che vende il venditore senza partire subito da un elenco di prodotti.\n5. Prepara una traccia concreta e utilizzabile dal venditore, con linguaggio naturale e umano.\n\nNon inventare informazioni specifiche sul cliente che non siano contenute nei dati forniti. Se mancano informazioni, lavora con ciò che è disponibile e segnala cosa va verificato.";
-const cliente = document.getElementById('cliente');
-const vende = document.getElementById('vende');
-const preview = document.getElementById('preview');
-const btn = document.getElementById('copyBtn');
-
-function getPrompt() {
-  return template
-    .replaceAll('[POTENZIALE_CLIENTE]', cliente.value.trim() || '[DA INSERIRE]')
-    .replaceAll('[COSA_VENDE]', vende.value.trim() || '[DA INSERIRE]');
-}
-function refresh() { preview.textContent = getPrompt(); }
-cliente.addEventListener('input', refresh);
-vende.addEventListener('input', refresh);
-
-btn.addEventListener('click', async () => {
-  const p = getPrompt();
-  try {
-    await navigator.clipboard.writeText(p);
-  } catch(e) {
-    const ta=document.createElement('textarea');
-    ta.value=p; document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); ta.remove();
-  }
-  btn.textContent='✓  PROMPT COPIATO';
-  setTimeout(()=>btn.textContent='▣  COPIA IL PROMPT COMPLETO',1800);
-});
+const cliente=document.getElementById('cliente'), vende=document.getElementById('vende'), preview=document.getElementById('preview'), btn=document.getElementById('copyBtn');
+function getPrompt(){return template.replaceAll('[POTENZIALE_CLIENTE]',cliente.value.trim()||'[DA INSERIRE]').replaceAll('[COSA_VENDE]',vende.value.trim()||'[DA INSERIRE]')}
+function refresh(){preview.textContent=getPrompt()}
+cliente.addEventListener('input',refresh); vende.addEventListener('input',refresh);
+btn.addEventListener('click',async()=>{const p=getPrompt();try{await navigator.clipboard.writeText(p)}catch(e){const t=document.createElement('textarea');t.value=p;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}btn.textContent='✓  PROMPT COPIATO';setTimeout(()=>btn.textContent='▣  COPIA IL PROMPT COMPLETO',1800)});
 refresh();
 </script>
 </body>
 </html>
+index.html
+HTML
+
+Sponsored options
+Ad
+Sponsored options
+Ad
+Sponsored options
+Ad
