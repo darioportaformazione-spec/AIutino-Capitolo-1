@@ -9,19 +9,20 @@
 body{margin:0;background:#eeeae3;color:#171717;font-family:Arial,Helvetica,sans-serif}
 .page{width:min(1080px,calc(100% - 28px));margin:16px auto;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.10)}
 
-/* HEADER: pulito, senza banner dietro al sottotitolo */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 280px;min-height:320px;overflow:hidden;background:#f8f1e6}
-.hero-copy{position:relative;z-index:2;padding:30px 12px 25px 52px}
+/* HEADER DESKTOP */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 275px;min-height:345px;overflow:hidden;background:#f8f1e6}
+.hero-copy{position:relative;z-index:4;padding:30px 10px 28px 52px;min-width:0}
 .author{color:#d91f16;font-weight:800;letter-spacing:7px;font-size:21px;margin-bottom:9px}
-.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:4px 0;font-weight:800;font-size:14px;margin-bottom:16px}
-.hero h1{margin:0;color:#090909;font-size:clamp(44px,5.7vw,70px);line-height:.91;letter-spacing:-2.5px;max-width:700px}
-.hero h1 span{color:#d91f16}
+.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:4px 0;font-weight:800;font-size:14px;margin-bottom:15px}
+.hero h1{margin:0;color:#090909;font-size:clamp(42px,5.35vw,66px);line-height:.9;letter-spacing:-2px;max-width:650px}
+.hero h1 span{color:#d91f16;display:block;white-space:nowrap}
 .redline{width:220px;height:6px;background:#d91f16;border-radius:50%;margin:17px 0 13px;transform:rotate(-1deg)}
-.subtitle{font:18px/1.25 Georgia,serif;max-width:620px;color:#202020}
+.subtitle{font:18px/1.28 Georgia,serif;max-width:650px;color:#202020;position:relative;z-index:6}
 .subtitle b{color:#d91f16}
-.cover-wrap{display:flex;align-items:center;justify-content:center;padding:20px 30px 20px 0;position:relative;z-index:3}
-.cover{width:235px;max-height:292px;object-fit:contain;transform:rotate(2deg);filter:drop-shadow(0 15px 15px rgba(0,0,0,.22))}
-.hero::after{content:"";position:absolute;left:-150px;bottom:-190px;width:520px;height:250px;background:#d91f16;border-radius:50%;opacity:.96}
+.cover-wrap{display:flex;align-items:center;justify-content:center;padding:18px 28px 18px 0;position:relative;z-index:5}
+.cover{width:225px;max-height:295px;object-fit:contain;transform:rotate(2deg);filter:drop-shadow(0 15px 15px rgba(0,0,0,.22))}
+/* decorazione separata dal testo */
+.hero::after{content:"";position:absolute;left:-170px;bottom:-190px;width:560px;height:245px;background:#d91f16;border-radius:50%;opacity:.96;z-index:1}
 
 /* CONTENUTO */
 .content{padding:28px 38px 28px}
@@ -54,13 +55,15 @@ summary::-webkit-details-marker{display:none}
 .prompt{margin:0 14px 14px;padding:18px;background:#171717;color:#f4f4f4;border-radius:9px;white-space:pre-wrap;font:13px/1.5 Consolas,monospace;max-height:470px;overflow:auto}
 .note{margin-top:17px;color:#68727e;font-size:14px}
 
+/* SMARTPHONE */
 @media(max-width:760px){
   .page{width:calc(100% - 10px);margin:5px auto;border-radius:17px}
   .hero{grid-template-columns:minmax(0,1fr) 112px;min-height:185px}
   .hero-copy{padding:15px 3px 13px 22px}
   .author{font-size:11px;letter-spacing:3.5px;margin-bottom:5px}
   .edition{font-size:8px;padding:3px 0;margin-bottom:7px}
-  .hero h1{font-size:clamp(27px,8.5vw,39px);line-height:.9;letter-spacing:-1.3px;max-width:100%;word-break:normal}
+  .hero h1{font-size:clamp(27px,8.5vw,39px);line-height:.9;letter-spacing:-1.3px;max-width:100%}
+  .hero h1 span{white-space:normal}
   .redline{width:105px;height:3px;margin:9px 0 7px}
   .subtitle{font-size:9.5px;line-height:1.18;max-width:100%}
   .cover-wrap{padding:8px 9px 8px 0}
@@ -99,7 +102,7 @@ summary::-webkit-details-marker{display:none}
   <div class="hero-copy">
     <div class="author">DARIO PORTA</div>
     <div class="edition">SECONDA EDIZIONE</div>
-    <h1>TI AMO...<br><span>MA CI DEVO<br>PENSARE</span></h1>
+    <h1>TI AMO...<br><span>MA CI DEVO PENSARE</span></h1>
     <div class="redline"></div>
     <div class="subtitle">Tecniche di comunicazione e relazionali per affascinare i clienti nell’era <b>digitale</b> e dell’<b>AI</b>.</div>
   </div>
