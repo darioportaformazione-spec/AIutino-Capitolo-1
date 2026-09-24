@@ -6,70 +6,70 @@
 <title>AIutino — Capitolo 1 | Dario Porta</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#eeeae3;color:#171717;font-family:Arial,Helvetica,sans-serif}
-.page{width:min(1080px,calc(100% - 28px));margin:16px auto;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.10)}
+body{margin:0;background:#ece9e3;color:#171717;font-family:Arial,Helvetica,sans-serif}
+.page{width:min(1180px,calc(100% - 28px));margin:18px auto;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 14px 45px rgba(0,0,0,.11)}
 
-/* HEADER DESKTOP */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 275px;min-height:345px;overflow:hidden;background:#f8f1e6}
-.hero-copy{position:relative;z-index:4;padding:30px 10px 28px 52px;min-width:0}
-.author{color:#d91f16;font-weight:800;letter-spacing:7px;font-size:21px;margin-bottom:9px}
-.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:4px 0;font-weight:800;font-size:14px;margin-bottom:15px}
-.hero h1{margin:0;color:#090909;font-size:clamp(42px,5.35vw,66px);line-height:.9;letter-spacing:-2px;max-width:650px}
-.hero h1 span{color:#d91f16;display:block;white-space:nowrap}
-.redline{width:220px;height:6px;background:#d91f16;border-radius:50%;margin:17px 0 13px;transform:rotate(-1deg)}
-.subtitle{font:18px/1.28 Georgia,serif;max-width:650px;color:#202020;position:relative;z-index:6}
+/* HERO */
+.hero{position:relative;min-height:355px;display:grid;grid-template-columns:minmax(0,1fr) 300px;overflow:hidden;background:linear-gradient(118deg,#fffdf9 0%,#f7eee0 100%)}
+.hero-copy{position:relative;z-index:4;padding:32px 20px 28px 58px}
+.author{color:#d91f16;font-weight:800;letter-spacing:7px;font-size:22px;margin-bottom:10px}
+.edition{display:inline-block;border-top:2px solid #d91f16;border-bottom:2px solid #d91f16;padding:5px 0;font-weight:800;font-size:14px;margin-bottom:18px}
+.hero h1{margin:0;line-height:.9;letter-spacing:-2.5px;font-size:clamp(43px,5.8vw,70px);max-width:760px}
+.hero h1 .red{color:#d91f16;display:block;white-space:nowrap}
+.redline{width:245px;height:6px;background:#d91f16;border-radius:50%;margin:18px 0 14px;transform:rotate(-1deg)}
+.subtitle{font:18px/1.28 Georgia,serif;max-width:720px}
 .subtitle b{color:#d91f16}
-.cover-wrap{display:flex;align-items:center;justify-content:center;padding:18px 28px 18px 0;position:relative;z-index:5}
-.cover{width:225px;max-height:295px;object-fit:contain;transform:rotate(2deg);filter:drop-shadow(0 15px 15px rgba(0,0,0,.22))}
-/* decorazione separata dal testo */
-.hero::after{content:"";position:absolute;left:-170px;bottom:-190px;width:560px;height:245px;background:#d91f16;border-radius:50%;opacity:.96;z-index:1}
+.cover-wrap{display:flex;justify-content:center;align-items:center;padding:18px 35px 18px 0;position:relative;z-index:5}
+.cover{width:235px;max-height:305px;object-fit:contain;transform:rotate(2deg);filter:drop-shadow(0 18px 17px rgba(0,0,0,.22))}
+.hero::after{content:"";position:absolute;z-index:1;left:-180px;bottom:-215px;width:590px;height:250px;border-radius:50%;background:#d91f16}
 
-/* CONTENUTO */
-.content{padding:28px 38px 28px}
-.heading{display:flex;gap:15px;align-items:center;margin-bottom:20px}
-.book-icon{width:62px;height:62px;flex:0 0 62px;border-radius:17px;background:#fde9e7;color:#d91f16;display:grid;place-items:center;font-size:31px}
-h2{margin:0;font-size:36px;letter-spacing:-1px}
-.intro{margin:4px 0 0;color:#56616d;font-size:17px;line-height:1.35}
+/* MAIN */
+.content{padding:34px 44px 32px}
+.heading{display:flex;gap:17px;align-items:center;margin-bottom:24px}
+.book-icon{width:68px;height:68px;flex:0 0 68px;border-radius:19px;background:#fde9e7;color:#d91f16;display:grid;place-items:center;font-size:34px}
+h2{margin:0;font-size:39px;letter-spacing:-1.2px}
+.intro{margin:5px 0 0;color:#59636f;font-size:18px;line-height:1.38}
 .intro strong{color:#d91f16}
-.card{padding:21px 24px;border-radius:17px;margin:13px 0}
-.blue{background:#eef6ff}.green{background:#eff9f2}
-.row{display:flex;gap:13px;align-items:center;margin-bottom:10px}
-.small-icon{width:48px;height:48px;flex:0 0 48px;border-radius:13px;display:grid;place-items:center;font-size:22px}
-.blue .small-icon{background:#d8eaff}.green .small-icon{background:#d9f2df}
-label{display:block;font-size:19px;font-weight:800}
-.help{display:block;margin-top:2px;color:#5e6874;font-size:14px}
-input{width:100%;padding:15px 17px;border:1px solid #cfd4da;border-radius:11px;background:#fff;font-size:17px;outline:none}
+.card{padding:23px 26px;border-radius:18px;margin:14px 0}
+.blue{background:#eef6ff} .green{background:#eff9f2}
+.row{display:flex;gap:14px;align-items:center;margin-bottom:11px}
+.small-icon{width:50px;height:50px;flex:0 0 50px;border-radius:14px;display:grid;place-items:center;font-size:23px}
+.blue .small-icon{background:#d8eaff} .green .small-icon{background:#d9f2df}
+label{display:block;font-size:20px;font-weight:800}
+.help{display:block;color:#5e6874;font-size:14px;margin-top:3px}
+input{width:100%;padding:16px 18px;border:1px solid #ccd2d8;border-radius:11px;background:#fff;font-size:17px;outline:none}
 input:focus{border:2px solid #d91f16}
-button{width:100%;border:0;border-radius:13px;background:#d91f16;color:#fff;padding:18px;font-size:20px;font-weight:800;cursor:pointer;margin-top:6px;box-shadow:0 7px 15px rgba(217,31,22,.16)}
+button{width:100%;border:0;border-radius:13px;background:#d91f16;color:white;padding:19px;font-size:20px;font-weight:800;cursor:pointer;margin-top:7px;box-shadow:0 7px 16px rgba(217,31,22,.18)}
 button:hover{filter:brightness(.96)}
-.after{margin-top:15px;background:#fff3f1;border-radius:17px;padding:19px 21px;border:1px solid #f6d5d1}
-.after-title{font-size:21px;font-weight:900;color:#b71912;margin-bottom:14px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+/* DOPO */
+.after{margin-top:17px;padding:20px 22px;border-radius:18px;background:#fff5f3;border:1px solid #f4d4d0}
+.after-title{font-size:21px;font-weight:900;color:#bd1a13;margin-bottom:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .step{display:flex;gap:10px;align-items:flex-start}
-.num{width:35px;height:35px;flex:0 0 35px;border-radius:50%;background:#d91f16;color:#fff;display:grid;place-items:center;font-weight:900}
-.step strong{display:block;font-size:15px;line-height:1.15}
-.step span{display:block;color:#69727d;font-size:13px;line-height:1.25;margin-top:4px}
-details{margin-top:15px;background:#f5f6f7;border-radius:13px;overflow:hidden}
-summary{cursor:pointer;list-style:none;padding:17px 20px;font-size:18px;font-weight:800}
+.num{width:36px;height:36px;flex:0 0 36px;border-radius:50%;background:#d91f16;color:white;display:grid;place-items:center;font-weight:900}
+.step strong{display:block;font-size:15px;line-height:1.18}
+.step span{display:block;color:#69727d;font-size:13px;line-height:1.3;margin-top:4px}
+details{margin-top:16px;background:#f5f6f7;border-radius:13px;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:18px 21px;font-size:18px;font-weight:800}
 summary::-webkit-details-marker{display:none}
-.prompt{margin:0 14px 14px;padding:18px;background:#171717;color:#f4f4f4;border-radius:9px;white-space:pre-wrap;font:13px/1.5 Consolas,monospace;max-height:470px;overflow:auto}
+.prompt{margin:0 14px 14px;padding:19px;background:#171717;color:#f3f3f3;border-radius:9px;white-space:pre-wrap;font:13px/1.52 Consolas,monospace;max-height:500px;overflow:auto}
 .note{margin-top:17px;color:#68727e;font-size:14px}
 
-/* SMARTPHONE */
 @media(max-width:760px){
   .page{width:calc(100% - 10px);margin:5px auto;border-radius:17px}
   .hero{grid-template-columns:minmax(0,1fr) 112px;min-height:185px}
   .hero-copy{padding:15px 3px 13px 22px}
   .author{font-size:11px;letter-spacing:3.5px;margin-bottom:5px}
   .edition{font-size:8px;padding:3px 0;margin-bottom:7px}
-  .hero h1{font-size:clamp(27px,8.5vw,39px);line-height:.9;letter-spacing:-1.3px;max-width:100%}
-  .hero h1 span{white-space:normal}
+  .hero h1{font-size:clamp(27px,8.5vw,39px);line-height:.9;letter-spacing:-1.2px}
+  .hero h1 .red{white-space:normal}
   .redline{width:105px;height:3px;margin:9px 0 7px}
   .subtitle{font-size:9.5px;line-height:1.18;max-width:100%}
   .cover-wrap{padding:8px 9px 8px 0}
   .cover{width:104px;max-height:150px}
   .hero::after{left:-90px;bottom:-155px;width:330px;height:170px}
-  .content{padding:18px 14px 18px}
+  .content{padding:18px 14px}
   .heading{gap:9px;margin-bottom:14px;align-items:flex-start}
   .book-icon{width:43px;height:43px;flex-basis:43px;border-radius:12px;font-size:22px}
   h2{font-size:24px;line-height:1.05}
@@ -98,11 +98,12 @@ summary::-webkit-details-marker{display:none}
 </head>
 <body>
 <div class="page">
+
 <section class="hero">
   <div class="hero-copy">
     <div class="author">DARIO PORTA</div>
     <div class="edition">SECONDA EDIZIONE</div>
-    <h1>TI AMO...<br><span>MA CI DEVO PENSARE</span></h1>
+    <h1>TI AMO...<span class="red">MA CI DEVO PENSARE</span></h1>
     <div class="redline"></div>
     <div class="subtitle">Tecniche di comunicazione e relazionali per affascinare i clienti nell’era <b>digitale</b> e dell’<b>AI</b>.</div>
   </div>
@@ -141,18 +142,43 @@ summary::-webkit-details-marker{display:none}
     </div>
   </section>
 
-  <details><summary>▶ &nbsp; Visualizza il prompt</summary><div class="prompt" id="preview"></div></details>
+  <details>
+    <summary>▶ &nbsp; Visualizza il prompt</summary>
+    <div class="prompt" id="preview"></div>
+  </details>
+
   <div class="note">ⓘ &nbsp; L’AIutino è applicabile a qualsiasi settore della vendita.</div>
 </main>
 </div>
 
 <script>
-const template = "Agisci come un formatore commerciale esperto.\n\nTi fornirò:\nPOTENZIALE CLIENTE: [POTENZIALE_CLIENTE]\nCOSA VENDE IL VENDITORE: [COSA_VENDE]\n\nAiuta il venditore a preparare il primo contatto con questo potenziale cliente.\n\n1. Analizza ragione sociale, categoria e località.\n2. Costruisci un'apertura naturale, concreta e personalizzata, evitando frasi generiche da venditore.\n3. Crea TRE possibili apprezzamenti specifici, credibili e pertinenti.\n4. Collega l'approccio a ciò che vende il venditore senza partire subito da un elenco di prodotti.\n5. Prepara una traccia concreta e utilizzabile dal venditore, con linguaggio naturale e umano.\n\nNon inventare informazioni specifiche sul cliente che non siano contenute nei dati forniti. Se mancano informazioni, lavora con ciò che è disponibile e segnala cosa va verificato.";
-const cliente=document.getElementById('cliente'), vende=document.getElementById('vende'), preview=document.getElementById('preview'), btn=document.getElementById('copyBtn');
-function getPrompt(){return template.replaceAll('[POTENZIALE_CLIENTE]',cliente.value.trim()||'[DA INSERIRE]').replaceAll('[COSA_VENDE]',vende.value.trim()||'[DA INSERIRE]')}
-function refresh(){preview.textContent=getPrompt()}
-cliente.addEventListener('input',refresh); vende.addEventListener('input',refresh);
-btn.addEventListener('click',async()=>{const p=getPrompt();try{await navigator.clipboard.writeText(p)}catch(e){const t=document.createElement('textarea');t.value=p;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}btn.textContent='✓  PROMPT COPIATO';setTimeout(()=>btn.textContent='▣  COPIA IL PROMPT COMPLETO',1800)});
+const template = "Agisci come un formatore commerciale esperto.\n\nTi fornirò:\n\nPOTENZIALE CLIENTE:\n[POTENZIALE_CLIENTE]\n\nCOSA VENDE IL VENDITORE:\n[COSA_VENDE]\n\nAiuta il venditore a preparare il primo contatto con questo potenziale cliente.\n\nOBIETTIVO\nPreparare una conversazione di primo contatto naturale, concreta e personalizzata, evitando il linguaggio tipico da venditore e senza trasformare la conversazione in una presentazione del prodotto.\n\nLa risposta deve essere organizzata ESATTAMENTE nei tre paragrafi:\n\n1.1 — IL PRIMO CONTATTO\n1.2 — IL SERPENTE SSSOLUZIONATORE E IL DEMONE VALUTATORE\n1.3 — METODO “WINNIE THE POOH” PER RIEMPIRE L’AGENDA\n\n1.1 — IL PRIMO CONTATTO\n\nAnalizza ragione sociale, categoria e località del potenziale cliente.\n\nCostruisci un’apertura naturale e personalizzata.\n\nL’apertura deve contenere apprezzamenti concreti e specifici, evitando complimenti generici come “avete una bella attività”, “siete molto presenti” o formule simili.\n\nUtilizza informazioni verificabili e pertinenti quando sono disponibili.\n\nL'obiettivo dell'apertura è dimostrare che il venditore ha dedicato attenzione al potenziale cliente prima di contattarlo.\n\n1.2 — IL SERPENTE SSSOLUZIONATORE E IL DEMONE VALUTATORE\n\nIl venditore deve evitare due comportamenti:\n\n- il SERPENTE SSSOLUZIONATORE: partire immediatamente con una soluzione, un prodotto o un problema che il cliente non ha ancora espresso;\n- il DEMONE VALUTATORE: cercare immediatamente di capire se il cliente “vale la pena”, giudicandolo sulla base di supposizioni.\n\nNon anticipare quindi problemi, bisogni o soluzioni che il cliente non ha espresso.\n\nPrepara domande che permettano al venditore di capire la situazione del cliente senza guidarlo verso una risposta prestabilita.\n\nUtilizza ESATTAMENTE DUE DOMANDE:\n\n- una domanda che inizi con “Cosa...”\n- una domanda che inizi con “Come...”\n\nLe due domande devono essere naturali, pertinenti al settore del potenziale cliente e realmente utili per aprire la conversazione.\n\nNon aggiungere altre domande.\n\n1.3 — METODO “WINNIE THE POOH” PER RIEMPIRE L’AGENDA\n\nPrepara la parte finale del primo contatto con l'obiettivo di ottenere un appuntamento, senza cercare di vendere durante la telefonata.\n\nLa proposta dell'appuntamento deve essere semplice e naturale.\n\nUtilizza obbligatoriamente questa frase:\n\n“Non richiede nessuna decisione immediata: ci prendiamo semplicemente il tempo per capire se quello che facciamo può essere interessante anche per voi.”\n\nLa telefonata deve arrivare alla richiesta dell'appuntamento entro 45 secondi circa.\n\nLa chiusura dell'appuntamento deve terminare obbligatoriamente con:\n\n“Preferisce la mattina o il pomeriggio?”\n\nREGOLE GENERALI\n\n- Non inventare informazioni specifiche sul potenziale cliente.\n- Non inventare problemi, esigenze o obiettivi del cliente.\n- Non anticipare la soluzione prima di aver aperto il confronto.\n- Non trasformare il primo contatto in una presentazione commerciale.\n- Non utilizzare frasi generiche da venditore.\n- Mantieni un linguaggio naturale, umano e conversazionale.\n- Il risultato deve essere immediatamente utilizzabile dal venditore.\n\nFORMATO FINALE\n\nRispetta rigorosamente i tre paragrafi 1.1, 1.2 e 1.3 e non aggiungere sezioni ulteriori.";
+const cliente = document.getElementById('cliente');
+const vende = document.getElementById('vende');
+const preview = document.getElementById('preview');
+const btn = document.getElementById('copyBtn');
+
+function getPrompt() {
+  return template
+    .replaceAll('[POTENZIALE_CLIENTE]', cliente.value.trim() || '[DA INSERIRE]')
+    .replaceAll('[COSA_VENDE]', vende.value.trim() || '[DA INSERIRE]');
+}
+function refresh() { preview.textContent = getPrompt(); }
+cliente.addEventListener('input', refresh);
+vende.addEventListener('input', refresh);
+
+btn.addEventListener('click', async () => {
+  const p = getPrompt();
+  try {
+    await navigator.clipboard.writeText(p);
+  } catch(e) {
+    const t = document.createElement('textarea');
+    t.value = p; document.body.appendChild(t); t.select();
+    document.execCommand('copy'); t.remove();
+  }
+  btn.textContent = '✓  PROMPT COPIATO';
+  setTimeout(() => btn.textContent = '▣  COPIA IL PROMPT COMPLETO', 1800);
+});
 refresh();
 </script>
 </body>
