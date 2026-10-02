@@ -1,12 +1,676 @@
-Agisci come un formatore commerciale esperto.
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aiutino — Capitolo 1</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px 60px;
+    background: #ebe8e2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #171717;
+}
+
+/* CONTENITORE PRINCIPALE */
+.container {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+    background: #fffdf9;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.13);
+}
+
+/* =====================================================
+   TESTATA LIBRO
+===================================================== */
+
+.header {
+    position: relative;
+    min-height: 175px;
+    padding: 25px 30px 35px;
+    background: #fffaf0;
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    bottom: -42px;
+    width: 65%;
+    height: 65px;
+    background: #e21b13;
+    border-radius: 0 100% 0 0;
+    transform: rotate(-1deg);
+}
+
+.author {
+    color: #e21b13;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.edition {
+    margin-top: 5px;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.header h1 {
+    margin: 14px 0 7px;
+    font-size: 31px;
+    line-height: 0.98;
+    letter-spacing: -1px;
+    max-width: 650px;
+}
+
+.header h1 span {
+    display: block;
+    color: #e21b13;
+}
+
+.subtitle {
+    max-width: 610px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* =====================================================
+   COPERTINA
+===================================================== */
+
+.book {
+    position: absolute;
+    right: 27px;
+    top: 13px;
+    width: 105px;
+    height: 140px;
+    background:
+        linear-gradient(145deg,#fffdf8,#eee9df);
+    box-shadow: 0 8px 18px rgba(0,0,0,.20);
+    transform: rotate(1deg);
+    z-index: 3;
+    padding: 7px;
+    text-align: center;
+}
+
+.book-top {
+    font-size: 5px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.book-title {
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: .95;
+    font-weight: 900;
+}
+
+.book-title span {
+    color: #e21b13;
+    display: block;
+}
+
+.book-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin: 11px auto 5px;
+    background: #111;
+    position: relative;
+}
+
+.book-circle::after {
+    content: "AI";
+    position: absolute;
+    right: -14px;
+    top: -8px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #e21b13;
+    color: white;
+    font-size: 8px;
+    font-weight: 900;
+    display: grid;
+    place-items: center;
+}
+
+.book-bottom {
+    font-size: 5px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* =====================================================
+   CONTENUTO
+===================================================== */
+
+.content {
+    padding: 23px 28px 22px;
+}
+
+/* TITOLO CAPITOLO */
+
+.chapter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.chapter-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #ffe7e4;
+    color: #e21b13;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.chapter h2 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.chapter p {
+    margin: 4px 0 0;
+    color: #777;
+    font-size: 10px;
+}
+
+/* =====================================================
+   CAMPI
+===================================================== */
+
+.field {
+    padding: 12px 14px;
+    margin-bottom: 9px;
+    border-radius: 10px;
+}
+
+.field.blue {
+    background: #edf6ff;
+}
+
+.field.green {
+    background: #eff9f0;
+}
+
+.field-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+}
+
+.blue .icon {
+    background: #d9ecff;
+}
+
+.green .icon {
+    background: #d9f0da;
+}
+
+.description {
+    margin: 2px 0 8px 26px;
+    color: #777;
+    font-size: 9px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    background: white;
+    font-size: 10px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #e21b13;
+    box-shadow: 0 0 0 2px rgba(226,27,19,.08);
+}
+
+/* =====================================================
+   PULSANTE
+===================================================== */
+
+.copy-button {
+    width: 100%;
+    height: 35px;
+    margin: 0 0 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #e21b13;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background: #c9160e;
+}
+
+/* =====================================================
+   COSA FARE DOPO
+===================================================== */
+
+.steps {
+    padding: 10px 12px 11px;
+    border: 1px solid #efbcb7;
+    border-radius: 8px;
+    background: #fff9f8;
+}
+
+.steps-title {
+    margin-bottom: 9px;
+    color: #e21b13;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.number {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e21b13;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.step strong {
+    font-size: 9px;
+}
+
+.step small {
+    display: block;
+    margin-top: 2px;
+    color: #777;
+    font-size: 8px;
+    line-height: 1.25;
+}
+
+/* =====================================================
+   PROMPT
+===================================================== */
+
+.prompt-box {
+    margin-top: 10px;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.prompt-box summary {
+    padding: 9px 10px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.prompt-text {
+    max-height: 430px;
+    overflow-y: auto;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background: #fafafa;
+    white-space: pre-wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    line-height: 1.45;
+    color: #333;
+}
+
+.footer {
+    margin-top: 10px;
+    padding-left: 4px;
+    color: #777;
+    font-size: 8px;
+}
+
+/* =====================================================
+   MESSAGGIO COPIATO
+===================================================== */
+
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 11px 15px;
+    border-radius: 8px;
+    background: #191919;
+    color: white;
+    font-size: 11px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: .2s;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        padding-right: 145px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .book {
+        right: 12px;
+        width: 90px;
+        height: 120px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         TESTATA
+    ========================== -->
+
+    <div class="header">
+
+        <div class="author">
+            DARIO PORTA
+        </div>
+
+        <div class="edition">
+            SECONDA EDIZIONE
+        </div>
+
+        <h1>
+            TI AMO...
+            <span>MA CI DEVO PENSARE</span>
+        </h1>
+
+        <div class="subtitle">
+            Tecniche di comunicazione e relazionali per affascinare i clienti
+            nell'era digitale e dell'AI.
+        </div>
+
+        <div class="book">
+            <div class="book-top">
+                DARIO PORTA
+            </div>
+
+            <div class="book-title">
+                TI AMO...
+                <span>MA CI DEVO PENSARE</span>
+            </div>
+
+            <div class="book-circle"></div>
+
+            <div class="book-bottom">
+                Tecniche di comunicazione<br>
+                e relazionali
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTENUTO
+    ========================== -->
+
+    <div class="content">
+
+        <div class="chapter">
+
+            <div class="chapter-icon">
+                ▱
+            </div>
+
+            <div>
+                <h2>
+                    Aiutino — Capitolo 1
+                </h2>
+
+                <p>
+                    Inserisci i dati, copia il prompt e poi incollalo su ChatGPT
+                    o sulla tua AI.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CLIENTE -->
+
+        <div class="field blue">
+
+            <div class="field-title">
+                <span class="icon">▤</span>
+                POTENZIALE CLIENTE
+            </div>
+
+            <div class="description">
+                Inserisci ragione sociale, categoria e località.
+            </div>
+
+            <input
+                id="cliente"
+                type="text"
+                placeholder="Ragione sociale, categoria e località"
+            >
+
+        </div>
+
+
+        <!-- COSA VENDE -->
+
+        <div class="field green">
+
+            <div class="field-title">
+                <span class="icon">◆</span>
+                COSA VENDE IL VENDITORE
+            </div>
+
+            <div class="description">
+                Inserisci prodotti, servizi o soluzioni che proponi.
+            </div>
+
+            <input
+                id="vende"
+                type="text"
+                placeholder="Prodotti, servizi o soluzioni che proponi"
+            >
+
+        </div>
+
+
+        <!-- COPIA -->
+
+        <button
+            class="copy-button"
+            onclick="copyPrompt()"
+        >
+            ▣ &nbsp; COPIA IL PROMPT COMPLETO
+        </button>
+
+
+        <!-- COSA FARE DOPO -->
+
+        <div class="steps">
+
+            <div class="steps-title">
+                COSA FARE DOPO
+            </div>
+
+            <div class="steps-grid">
+
+                <div class="step">
+
+                    <div class="number">1</div>
+
+                    <div>
+                        <strong>Copia il prompt</strong>
+
+                        <small>
+                            Clicca sul pulsante qui sopra.
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">2</div>
+
+                    <div>
+                        <strong>Apri ChatGPT o la tua AI</strong>
+
+                        <small>
+                            Vai su ChatGPT oppure sull'assistente che usi.
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">3</div>
+
+                    <div>
+                        <strong>Incolla e invia</strong>
+
+                        <small>
+                            Incolla il prompt, invia e... buona vendita.
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROMPT VISIBILE -->
+
+        <details class="prompt-box">
+
+            <summary>
+                ▶ &nbsp; Visualizza il prompt
+            </summary>
+
+            <div
+                class="prompt-text"
+                id="promptView"
+            ></div>
+
+        </details>
+
+
+        <div class="footer">
+            ⓘ L’Aiutino è applicabile a qualsiasi settore della vendita.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+    Prompt copiato negli appunti
+</div>
+
+
+<script>
+
+/* =====================================================
+   PROMPT COMPLETO
+===================================================== */
+
+const PROMPT = `Agisci come un formatore commerciale esperto.
 
 Ti fornirò:
 
 POTENZIALE CLIENTE:
-Centro estetico il sogno Paderno dugnano
+{{CLIENTE}}
 
 COSA VENDE IL VENDITORE:
-Servizi di digital marketing Per aziende
+{{VENDE}}
 
 Aiuta il venditore a preparare il primo contatto con questo potenziale cliente.
 
@@ -28,18 +692,31 @@ Costruisci un’apertura naturale e personalizzata.
 L’apertura deve contenere almeno UN apprezzamento concreto e specifico, evitando complimenti generici come “avete una bella attività”, “siete molto presenti” o formule simili.
 
 Prima di costruire l’apertura, ricerca informazioni concrete e verificabili sul potenziale cliente. Dai priorità, nell’ordine, a:
+
 1. pagina “Chi siamo”, “La nostra storia”, “Le origini” o equivalenti;
 2. recensioni Google, individuando una recensione specifica e un elemento realmente apprezzato dal cliente;
 3. post recenti e pertinenti di Facebook o Instagram;
 4. pagine del sito relative a servizi, filosofia, metodo di lavoro, specializzazioni o caratteristiche distintive.
 
-L’apprezzamento utilizzato deve derivare da almeno una di queste fonti e deve riferirsi a un elemento realmente osservato del potenziale cliente. Non sono accettabili come apprezzamenti il semplice nome dell’attività, la categoria, la località, il posizionamento dichiarato o osservazioni generiche non collegate a una fonte specifica.
+L’apprezzamento utilizzato deve derivare da almeno una di queste fonti e deve riferirsi a un elemento realmente osservato del potenziale cliente.
 
-Per ogni apprezzamento utilizzato, verifica internamente la fonte da cui è stato ricavato. Se non viene trovata alcuna informazione concreta e verificabile, NON inventare l’apprezzamento e non sostituirlo con un complimento generico.
+Non sono accettabili come apprezzamenti il semplice nome dell’attività, la categoria, la località, il posizionamento dichiarato o osservazioni generiche non collegate a una fonte specifica.
+
+Per ogni apprezzamento utilizzato, verifica internamente la fonte da cui è stato ricavato.
+
+Se non viene trovata alcuna informazione concreta e verificabile, NON inventare l’apprezzamento e non sostituirlo con un complimento generico.
 
 L'obiettivo dell'apertura è dimostrare che il venditore ha dedicato attenzione al potenziale cliente prima di contattarlo.
-L'apertura deve iniziare con: “Buongiorno, (chi sei e cosa fai).”
-La parte “(chi sei e cosa fai)” è un SEGNAPOSTO e deve essere SEMPRE SOSTITUITA con una breve presentazione naturale del venditore, generata in modo coerente con ciò che vende il venditore indicato nel campo “COSA VENDE IL VENDITORE”. NON riportare mai nella risposta finale le parole “(chi sei e cosa fai)”. Non inventare il nome del venditore.
+
+L’apertura deve iniziare con:
+
+“Buongiorno, [breve presentazione naturale di chi sei e di cosa fai].”
+
+La parte tra parentesi quadre è un SEGNAPOSTO e deve essere sempre sostituita con una breve presentazione naturale del venditore, generata in modo coerente con ciò che vende il venditore indicato nel campo “COSA VENDE IL VENDITORE”.
+
+NON inventare il nome del venditore.
+
+NON riportare mai nella risposta finale il segnaposto.
 
 1.2 — IL SERPENTE SSSOLUZIONATORE E IL DEMONE VALUTATORE
 
@@ -71,9 +748,12 @@ Dopo aver ascoltato le risposte del cliente alle due domande, la chiusura deve r
 
 “Bene, proprio perché mi ha detto che [riportare in modo sintetico e fedele ciò che è emerso dalla conversazione]...”
 
-La parte tra parentesi deve essere SEMPRE sostituita con ciò che è realmente emerso dalle risposte del cliente. NON inventare informazioni, esigenze, problemi o obiettivi che il cliente non ha espresso.
+La parte tra parentesi deve essere SEMPRE sostituita con ciò che è realmente emerso dalle risposte del cliente.
+
+NON inventare informazioni, esigenze, problemi o obiettivi che il cliente non ha espresso.
 
 La proposta dell'appuntamento deve spiegare che l'incontro servirà per far vedere concretamente:
+
 - quello che fa il venditore;
 - alcuni esempi di ciò che fanno altre aziende dello stesso settore;
 - ciò che potrebbe eventualmente fare anche il potenziale cliente.
@@ -86,7 +766,7 @@ Utilizza obbligatoriamente questa frase:
 
 La frase deve essere inserita naturalmente nella chiusura, dopo aver spiegato che durante l'appuntamento il venditore porterà anche alcuni esempi concreti.
 
-La struttura della chiusura deve quindi seguire, in modo naturale, questa logica:
+La struttura della chiusura deve seguire, in modo naturale, questa logica:
 
 “Bene, proprio perché mi ha detto che [elemento realmente emerso dalla conversazione], facciamo così: io vengo da lei, le faccio vedere quello che facciamo noi, quello che fanno anche altre aziende del suo settore e quello che potrebbe fare anche lei. Le porterò anche qualche esempio concreto, così lo guardiamo insieme. Non richiede nessuna decisione immediata: ci prendiamo semplicemente il tempo per capire se quello che facciamo può essere interessante anche per voi. Preferisce la mattina o il pomeriggio?”
 
@@ -116,4 +796,101 @@ REGOLE GENERALI
 
 FORMATO FINALE
 
-Rispetta rigorosamente i tre paragrafi 1.1, 1.2 e 1.3 e non aggiungere sezioni ulteriori.
+Rispetta rigorosamente i tre paragrafi 1.1, 1.2 e 1.3 e non aggiungere sezioni ulteriori.`;
+
+
+/* =====================================================
+   CREA IL PROMPT CON I DATI INSERITI
+===================================================== */
+
+function getPrompt() {
+
+    const cliente =
+        document.getElementById("cliente").value.trim()
+        || "[INSERISCI POTENZIALE CLIENTE]";
+
+    const vende =
+        document.getElementById("vende").value.trim()
+        || "[INSERISCI COSA VENDE IL VENDITORE]";
+
+    return PROMPT
+        .replace("{{CLIENTE}}", cliente)
+        .replace("{{VENDE}}", vende);
+}
+
+
+/* =====================================================
+   AGGIORNA IL PROMPT VISIBILE
+===================================================== */
+
+function updatePrompt() {
+
+    document.getElementById("promptView").textContent =
+        getPrompt();
+}
+
+
+/* =====================================================
+   COPIA IL PROMPT
+===================================================== */
+
+async function copyPrompt() {
+
+    const text = getPrompt();
+
+    try {
+
+        await navigator.clipboard.writeText(text);
+
+    } catch (error) {
+
+        const textarea =
+            document.createElement("textarea");
+
+        textarea.value = text;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand("copy");
+
+        textarea.remove();
+    }
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(function() {
+
+        toast.classList.remove("show");
+
+    }, 1800);
+}
+
+
+/* =====================================================
+   EVENTI
+===================================================== */
+
+document
+    .getElementById("cliente")
+    .addEventListener("input", updatePrompt);
+
+document
+    .getElementById("vende")
+    .addEventListener("input", updatePrompt);
+
+
+/* =====================================================
+   AVVIO
+===================================================== */
+
+updatePrompt();
+
+</script>
+
+</body>
+</html>
